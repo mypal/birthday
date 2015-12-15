@@ -1,9 +1,11 @@
 var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
+var webpackDevMiddleware = require('koa-webpack-dev-middleware');
+var webpackHotMiddleware = require('koa-webpack-hot-middleware');
 var config = require('./webpack.config');
 
-var app = new require('express')();
+var app = new require('koa')();
+var router = new require('koa-router')();
+var sendfile = require('koa-sendfile');
 var port = 1235;
 
 var compiler = webpack(config);
@@ -13,9 +15,10 @@ if (process.env.NODE_ENV != 'production') {
     app.use(webpackHotMiddleware(compiler));
 }
 
-app.get("/purelf", function(req, res) {
-    res.sendFile(__dirname + '/index.html');
+router.get("/purelf", function*() {
+    yield* sendfile.call(this, __dirname + '/index.html');
 });
+app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(port, function(error) {
     if (error) {
