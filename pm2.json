@@ -1,0 +1,20 @@
+{
+  "apps" : [{
+    "name"               : "purelf",
+    "script"             : "server.js",
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "exec_interpreter"   : "node",
+    "node_args"          : "--harmony",
+    "exec_mode"          : "cluster_mode",
+    "instances"          : 0,
+    "log_date_format"    : "YYYY-MM-DD HH:mm:ss",
+    "max_memory_restart" : "1400M",
+    "merge_logs"         : true,
+    "error_file"         : "/var/logs/purelf/error.log",
+    "out_file"           : "/var/logs/purelf/out.log",
+    "pid_file"           : "/var/logs/purelf/purelf.pid",
+    "watch"              : false
+  }]
+}
