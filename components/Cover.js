@@ -1,8 +1,10 @@
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import React, { Component, PropTypes } from 'react';
+import { navSudoku } from '../actions/navigation';
 
 class Cover extends Component {
     render() {
-        //const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
         return (
             <section className="cover">
                 <div className="bg"></div>
@@ -13,10 +15,19 @@ class Cover extends Component {
                         <h1 className="typewriter hideln">Happy birthday!</h1>
                     </div>
                 </div>
-                <div className="btn-con"><button className="btn">click me</button></div>
+                <div className="btn-con"><button className="btn" onClick={this.props.navSudoku}>Click to Crack</button></div>
             </section>
         );
     }
 }
 
-export default Cover;
+Cover.propTypes = {
+    navSudoku: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+    return {
+    };
+}
+
+export default connect(mapStateToProps, { navSudoku })(Cover);

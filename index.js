@@ -4,9 +4,7 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 import configureStore from './store/configureStore';
 
-import TodoList from './components/TodoList';
-
-const store = configureStore();
+const store = configureStore({page: 'sudoku'});
 
 render(
   <Provider store={store}>

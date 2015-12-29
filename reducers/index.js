@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
+import { page } from './page';
+import { sudoku } from './sudoku';
 
 const rootReducer = combineReducers({
-  counter
+    page,
+    sudoku
 });
 
 export default rootReducer;
