@@ -1,4 +1,4 @@
-import { NAV_INDEX, NAV_SUDOKU, NAV_SQUARE } from '../actions/navigation';
+import { NAV_INDEX, NAV_SUDOKU, NAV_SQUARE, NAV_LETTER, NAV_RESULT } from '../actions/navigation';
 
 export function page(state = 'index', action) {
     switch (action.type) {
@@ -8,6 +8,10 @@ export function page(state = 'index', action) {
             return 'sudoku';
         case NAV_SQUARE:
             return 'square';
+        case NAV_LETTER:
+            return 'letter';
+        case NAV_RESULT:
+            return 'result';
         default:
             return state;
     }

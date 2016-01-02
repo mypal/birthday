@@ -1,0 +1,38 @@
+@import "animation";
+
+.final {
+  margin: 0;
+  padding: 0;
+  .main {
+    position: relative;
+    padding-top: 130px;
+    text-align: center;
+    font: bold 16px Courier, Consolas, Monaco, monospace;
+    .cong {
+      color: red;
+    }
+    .tit {
+      color: #30517c;
+    }
+    .answer {
+      i {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        margin: 0 10px 10px;
+      }
+      .sudoku {
+        background-color: @sudoku-win;
+        animation: answer-roll-2 4.5s 0s cubic-bezier(.42,0,.58,1) infinite;
+      }
+      .square {
+        background-color: @square-win;
+        animation: answer-roll-1 4.5s 0s cubic-bezier(.42,0,.58,1) infinite;
+      }
+      .letter {
+        background-color: @letter-win;
+        animation: answer-roll-3 4.5s 0s cubic-bezier(.42,0,.58,1) infinite;
+      }
+    }
+  }
+}

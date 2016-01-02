@@ -2,6 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import React, { Component, PropTypes } from 'react';
 import { sdkInputOnChange } from '../../actions/sudoku';
+import $ from 'jquery';
 
 class SudokuInput extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class SudokuInput extends Component {
         return (
             <input
                 className={className}
+                ref="input"
                 key={pos}
                 onInput={this.onInputHandle}
                 value={val}
@@ -32,6 +34,15 @@ class SudokuInput extends Component {
     onInputHandle(evt) {
         var pos = this.props.position;
         this.props.sdkInputOnChange(pos, evt.target.value);
+    }
+
+    componentWillReceiveProps(nextState) {
+        if (nextState.win) {
+            var input = $(this.refs.input);
+            if (input.is(":focus")) {
+                input.trigger('blur');
+            }
+        }
     }
 }
 

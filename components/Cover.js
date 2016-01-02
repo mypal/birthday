@@ -16,6 +16,11 @@ class Cover extends Component {
                     </div>
                 </div>
                 <div className="btn-con"><button className="btn" onClick={this.props.navSudoku}>Click to Crack</button></div>
+                <div className="attach">
+                    <span className="text">
+                        Happy new year!
+                    </span>
+                </div>
             </section>
         );
     }

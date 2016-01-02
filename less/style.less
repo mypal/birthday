@@ -1,31 +1,8 @@
+@import "animation";
+
 @hold-time: 11s;
 @fade-in-time: 5s;
 @fade-in-func: cubic-bezier(.42,0,.58,1);
-@fade-in-color: red;
-
-@keyframes typing { from { width: 0; } }
-@keyframes blink-caret { 50% { border-color: black; } }
-@keyframes hiding {
-  from, to {width: 0;}
-}
-@keyframes fade-in {
-  to {opacity: 1}
-}
-@keyframes bg-color {
-  to {
-    background-color: mediumpurple;
-  }
-}
-@keyframes font-color {
-  to {
-    color: @fade-in-color;
-  }
-}
-@keyframes bg-fade-in {
-  to {
-    opacity: 1;
-  }
-}
 
 body {
   margin: 0;
@@ -37,25 +14,25 @@ input:disabled {
   opacity: 1;
 }
 
+.hide {
+  display: none;
+}
+
 .cover {
   .bg {
     opacity: 0;
     animation: bg-fade-in @fade-in-time @hold-time 1 @fade-in-func forwards;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: url('./img/cover_bg@2x.png');
-    background-size: 300px;
   }
   .title-con {
     position: relative;
     text-align: center;
     .title-wrap {
-      margin-top: 50px;
+      margin-top: 130px;
       text-align: left;
       display: inline-block;
       .typewriter {
         font: bold 200% Courier, Consolas, Monaco, monospace;
+        color: @fade-in-color;
         border-right: .1em solid;
         border-color: transparent;
         margin: 1em 0;
@@ -87,6 +64,7 @@ input:disabled {
   }
   .btn-con {
     text-align: center;
+    margin-top: -30px;
     .btn {
       padding: 0.2em 1.5em;
       font-size: 24px;
@@ -95,6 +73,22 @@ input:disabled {
       animation: fade-in @fade-in-time @hold-time 1 @fade-in-func forwards;
       border: 1px solid #000;
       border-radius: 5px;
+    }
+  }
+  .attach {
+    position: relative;
+    margin-top: -180px;
+    text-align: center;
+    transform: rotate(-6deg);
+    opacity: 0;
+    animation: fade-in @fade-in-time @hold-time 1 @fade-in-func forwards;
+    .text {
+      position: relative;
+      color: #30517c;
+      font: bold 200% Courier, Consolas, Monaco, monospace;
+      background: url('img/bg.jpg') 50% 80%;
+      padding: 15px;
+      border-radius: 10px;
     }
   }
 }

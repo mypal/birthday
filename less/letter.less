@@ -1,0 +1,47 @@
+@import "animation";
+
+.letter {
+  text-align: center;
+  .main {
+    margin-top: 80px;
+    position: relative;
+    //border: 1px solid #333;
+    display: inline-block;
+    .con {
+      font-size: 20px;
+      line-height: 45px;
+      background-color: #ccc9b5;
+      padding: 0 0.5em;
+      .grid {
+        font-size: 20px;
+        color: #49d;
+        background-color: #fff;
+        margin-left: 0.5em;
+        padding: 0;
+        -webkit-appearance:none;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        text-align: center;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        -moz-appearance:textfield;
+        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        &:disabled {
+          color: #333;
+        }
+        &.wrong {
+          color: #f63;
+          animation: bang 1s 0s 1;
+        }
+        &.win {
+          transform-origin: bottom left;
+          animation: let-bg-color 5s 0s 1 cubic-bezier(.42,0,.58,1) forwards;
+        }
+      }
+    }
+  }
+}

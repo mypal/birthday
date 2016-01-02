@@ -1,0 +1,143 @@
+@sudoku-win: #5ff;
+@square-win: #ff5;
+@letter-win: #f5f;
+
+@fade-in-color: #8d5d6b;
+@keyframes typing { from { width: 0; } }
+@keyframes blink-caret { 50% { border-color: black; } }
+@keyframes hiding {
+  from, to {width: 0;}
+}
+@keyframes fade-in {
+  to {opacity: 1}
+}
+@keyframes bg-color {
+  to {
+    background-color: mediumpurple;
+  }
+}
+@keyframes font-color {
+  to {
+    color: @fade-in-color;
+  }
+}
+@keyframes bg-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@offset: 15deg;
+@keyframes shake {
+  20% {
+    transform:rotate(-@offset);
+  }
+  40% {
+    transform:rotate(@offset);
+  }
+  60% {
+    transform:rotate(-@offset);
+  }
+  80% {
+    transform:rotate(@offset);
+  }
+  100% {
+    transform:rotate(-@offset);
+  }
+}
+
+@keyframes sdk-bg-color {
+  to {
+    background-color: @sudoku-win;
+    transform:scale(3, 3) rotate(750deg);
+  }
+}
+
+@keyframes fade-in {
+  to {opacity: 1}
+}
+
+
+
+
+@keyframes bang {
+  20% {
+    transform:scale(1.2, 1.2);
+  }
+  30% {
+    transform:scale(1, 1);
+  }
+  50% {
+    transform:scale(1.3, 1.3);
+  }
+  60% {
+    transform:scale(1, 1);
+  }
+}
+
+@keyframes sqr-bg-color {
+  to {
+    background-color: @square-win;
+    transform:scale(3, 3);
+  }
+}
+
+@keyframes let-bg-color {
+  to {
+    background-color: @letter-win;
+    transform: scale(3, 3) rotate(-380deg) translate(-50px, 10px);
+  }
+}
+
+
+@keyframes answer-roll-1 {
+  from, to, 16.67%, 33.33% {
+    transform: scaleX(1);
+  }
+  8.33%, 25% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes answer-roll-2 {
+  from, to, 33.33%, 50%, 66.67% {
+    transform: scaleX(1);
+  }
+  41.67%, 58.3% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes answer-roll-3 {
+  from, to, 66.67%, 83.33% {
+    transform: scaleX(1);
+  }
+  75%, 91.67% {
+    transform: scaleX(0);
+  }
+}
+
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('img/bg.jpg');
+  background-size: 599px 100%;
+  background-position-x: 50%;
+}
+
+.btn-con {
+  margin-top: 10px;
+  text-align: center;
+  .btn {
+    background-color: #e0ba96;
+    padding: 0.2em 1.5em;
+    font-size: 24px;
+    opacity: 0;
+    animation: fade-in 5s 0s 1 cubic-bezier(.42,0,.58,1) forwards;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+}

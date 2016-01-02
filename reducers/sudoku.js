@@ -1,6 +1,7 @@
 import { SDK_INPUT_ON_CHANGE } from '../actions/sudoku';
 import Immutable from 'immutable';
 import sudokuOrigin from '../const/sudoku-origin';
+import $ from 'jquery';
 
 function mod(n, m) {
     return Math.round(n%m);
