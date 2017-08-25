@@ -15,7 +15,7 @@ if (process.env.NODE_ENV != 'production') {
     app.use(webpackHotMiddleware(compiler));
 }
 
-router.get("/purelf", function*() {
+router.get("/", function*() {
     yield* sendfile.call(this, __dirname + '/index.html');
 });
 app.use(router.routes()).use(router.allowedMethods());

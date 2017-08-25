@@ -2,6 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {  } from '../less/style';
 import React, { Component, PropTypes } from 'react';
+import {timerTick} from '../actions/timer';
 import Cover from '../components/Cover';
 import Sudoku from '../components/Sudoku';
 import Square from '../components/Square';
@@ -9,6 +10,11 @@ import Letter from '../components/Letter';
 import Final from '../components/Final';
 
 class App extends Component {
+    componentWillMount() {
+        setInterval(() => {
+            this.props.timerTick();
+          }, 100)
+    }
     render() {
         let container;
         switch (this.props.page) {
@@ -45,7 +51,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({}, dispatch);
+    return bindActionCreators({timerTick}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

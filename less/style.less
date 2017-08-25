@@ -40,14 +40,14 @@ input:disabled {
         overflow: hidden;
 
         &.firstln {
-          width: 7ch;
-          animation: typing 3.5s steps(7, end), /* # of steps = # of chars */
-          blink-caret .5s step-end 7 alternate,
+          width: 5ch;
+          animation: typing 3.5s steps(5, end), /* # of steps = # of chars */
+          blink-caret .5s step-end 5 alternate,
           font-color @fade-in-time @hold-time 1 @fade-in-func forwards;
         }
         &.secondln {
-          width: 15ch;
-          animation: typing 7.5s 3.5s steps(15, end), /* # of steps = # of chars */
+          width: 16ch;
+          animation: typing 7.5s 3.5s steps(16, end), /* # of steps = # of chars */
           hiding 3.5s 1,
           blink-caret .5s 3.5s step-end infinite alternate,
           font-color @fade-in-time @hold-time 1 @fade-in-func forwards
@@ -75,20 +75,22 @@ input:disabled {
       border-radius: 5px;
     }
   }
-  .attach {
+}
+.attach {
+  bottom: 50px;
+  opacity: 1;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0 50px;
+  .text {
     position: relative;
-    margin-top: -180px;
-    text-align: center;
-    transform: rotate(-6deg);
-    opacity: 0;
-    animation: fade-in @fade-in-time @hold-time 1 @fade-in-func forwards;
-    .text {
-      position: relative;
-      color: #30517c;
-      font: bold 200% Courier, Consolas, Monaco, monospace;
-      background: url('img/bg.jpg') 50% 80%;
-      padding: 15px;
-      border-radius: 10px;
-    }
+    color: #5dd5ee;
+    font: 150% Courier, Consolas, Monaco, monospace;
+    padding: 15px;
+    border-radius: 10px;
   }
+}
+.final .attach {
+  opacity: 0;
+  animation: fade-in 5s 0s 1 @fade-in-func forwards;
 }

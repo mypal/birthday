@@ -17,6 +17,11 @@ class Cover extends Component {
                         <i className="letter" />
                     </div>
                 </div>
+                <div className="attach">
+                    <span className="text">
+                        {this.props.time}
+                    </span>
+                </div>
                 <div className="btn-con"><button className="btn" onClick={this.props.navSudoku}>Go Back</button></div>
             </section>
         );
@@ -30,6 +35,7 @@ Cover.propTypes = {
 
 function mapStateToProps(state) {
     return {
+        time: state.time
     };
 }
 

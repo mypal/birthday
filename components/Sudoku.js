@@ -33,13 +33,13 @@ class Sudoku extends Component {
 }
 
 Sudoku.propTypes = {
-    sudoku: PropTypes.object.isRequired
+    sudoku: PropTypes.object.isRequired,
+    navSquare: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-    return {
-        sudoku: state.sudoku,
-        navSquare: PropTypes.func.isRequired
+  return {
+        sudoku: state.sudoku
     };
 }
 

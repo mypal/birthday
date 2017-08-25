@@ -28,7 +28,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/purelf/static/'
+        // publicPath: '/static/'
     },
     plugins: plugins,
     module: {
